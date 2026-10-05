@@ -40,4 +40,4 @@ Upgraded to Node 22 and Postgres 17 by default and with fixed support for Backbl
 
 - `NODE_VERSION` - The Node version to use for the build stage. Default `22.14.0`
 
-- `PG_VERSION` - The Postgres version to use for the build stage. Default `17`
+- `PG_VERSION` - The Postgres version to use for the build stage. Default `18`
