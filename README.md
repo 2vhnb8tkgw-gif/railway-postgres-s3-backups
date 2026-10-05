@@ -2,7 +2,7 @@
 
 A slightly moidified version of [railway/postgres-s3-backups](https://github.com/railwayapp-templates/postgres-s3-backups) to backup your PostgreSQL database to S3 via a cron.
 
-Upgraded to Node 22 and Postgres 17 by default and with fixed support for Backblaze B2 and Cloudflare R2.
+Upgraded to Node 22 and Postgres 18 by default and with fixed support for Backblaze B2 and Cloudflare R2.
 
 [![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/template/eIOwd0?referralCode=h-EWY1)
 
@@ -38,6 +38,6 @@ Upgraded to Node 22 and Postgres 17 by default and with fixed support for Backbl
 
 - `DISABLE_S3_CHECKSUM_VALIDATION` - Disables default S3 request checksum validation which is [not supported](https://github.com/aws/aws-sdk-js-v3/issues/6810) by some S3 providers like [Backblaze B2](https://www.backblaze.com/docs/cloud-storage-s3-compatible-api#unsupported-features) and [Cloudflare R2](https://developers.cloudflare.com/r2/api/s3/api/). This only impacts the communication between the application and the S3 service, not the backup itself.
 
-- `NODE_VERSION` - The Node version to use for the build stage. Default `22.14.0`
+- `NODE_VERSION` - The Node version to use for the build and runtime stages. Default `22.22.0`
 
-- `PG_VERSION` - The Postgres version to use for the build stage. Default `18`
+- `PG_VERSION` - The PostgreSQL client version to install in the runtime image. Default `18`

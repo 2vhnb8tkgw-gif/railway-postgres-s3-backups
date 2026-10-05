@@ -1,6 +1,6 @@
-ARG NODE_VERSION='22.14.0'
+ARG NODE_VERSION='22.22.0'
 
-FROM node:${NODE_VERSION}-alpine AS build
+FROM node:${NODE_VERSION}-alpine3.23 AS build
 
 ENV NPM_CONFIG_UPDATE_NOTIFIER=false
 ENV NPM_CONFIG_FUND=false
@@ -14,7 +14,7 @@ RUN npm ci && \
     npm run build && \
     npm prune --production
 
-FROM node:${NODE_VERSION}-alpine
+FROM node:${NODE_VERSION}-alpine3.23
 
 WORKDIR /app
 
